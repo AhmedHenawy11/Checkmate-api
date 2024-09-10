@@ -2,3 +2,4 @@
 .env
 queries.sql
 package-lock.json
+.vercel
