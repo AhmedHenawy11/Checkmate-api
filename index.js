@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.get('/', (req, res) => {
-res.json({msg: "Hello from the backend server."})
+res.json({msg: "Welcome to backend server."})
 })
 app.use('/user', userRoutes); // User routes
 app.use('/tasks', taskRoutes); // Task routes
