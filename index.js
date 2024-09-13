@@ -15,7 +15,11 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 //Middlewares
-app.use(cors());
+app.use(cors({
+    origin: '*',  // For testing purposes; adjust this for security in production
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -23,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.get('/', (req, res) => {
-res.json({msg: "Welcome to backend server ."})
+res.json({msg: "Checkmate backend server."})
 })
 app.use('/user', userRoutes); // User routes
 app.use('/tasks', taskRoutes); // Task routes
